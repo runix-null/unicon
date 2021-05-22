@@ -1,0 +1,24 @@
+#################################################
+# Configuration file for Bochs
+#################################################
+
+# Bochs使用内存大小
+megs: 32
+
+#设置将使用的BIOS和BGA BIOS
+romimage: file=$BXSHARE/BIOS-bochs-latest 
+vgaromimage: file=$BXSHARE/VGABIOS-lgpl-latest
+
+#启动盘
+boot: disk
+
+#设置日志文件输出
+log: bochslog.out
+
+#关闭鼠标并打开键盘
+mouse: enabled=0
+keyboard: keymap=#$BXSHARE/keymaps/x11-pc-us.map
+
+#硬盘设置
+ata0: enabled=1, ioaddr1=0x1f0, ioaddr2=0x3f0, irq=14
+ata0-master: type=disk, path="hd.img", mode=flat
